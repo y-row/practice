@@ -1,0 +1,78 @@
+
+>>>command
+會把指定的字元以波的方式輸出。
+例如輸入a 4 3
+會產生高度為4，重複三次的波如下：
+a
+aa
+aaa
+aaaa
+aaa
+aa
+a
+aa
+aaa
+aaaa
+aaa
+aa
+a
+aa
+aaa
+aaaa
+aaa
+aa
+a
+
+類似的題目在ck judge裡也有，注意本題的波要求首尾相連，故遞減到輸出1個後，下次要從輸出2個開始。
+使用函數將去掉結尾的波輸出，就可以任意調控重複的個數：結束時再補一個字元就可以符合題意了。
+>>>code>>>
+
+#include<stdio.h>
+void wave(char c,int a)
+{	int i,j,k;
+	for(j=1;j<=a;j++)
+	{
+		for(k=1;k<=j;k++)
+		{
+			printf("%c",c);
+		}
+		printf("\n");
+	}
+	for(j=a;j>2;j--)
+	{
+		for(k=j-1;k>0;k--)
+		{
+			printf("%c",c);
+		}
+		printf("\n");
+	}
+}
+int main(void)
+{
+	char c;
+	int a,b,p;
+	scanf("%c%d%d",&c, &a, &b);
+	//printf("%c,%d,%d",c,a,b);
+	//printf("%c\n",c);
+	if (a==1)
+	{
+		for(p=1;p<b;p++)
+		{
+		printf("%c\n",c); 
+		}
+	}
+	else 
+	{
+		for(p=1;p<=b;p++)
+		{
+			wave(c,a);
+			
+		}
+	}
+	if (a>0&&b>0)
+	{
+		printf("%c",c);
+	}
+	
+	return 0;
+} 
