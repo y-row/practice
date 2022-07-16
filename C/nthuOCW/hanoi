@@ -1,0 +1,32 @@
+>>>command>>>
+手把手教你怎麼移動河內塔的程式。
+輸入你的河內塔有幾層
+按照輸出的方式移動就可以完成河內塔。
+
+intput格式：
+數字
+output格式：
+幾號盤子(大小),起始棒子編號==>新的編號
+
+>>>code>>>
+
+#include<stdio.h>
+void hanoi(int n,int from,int to,int buf);
+int main(void)
+{	int n;
+	scanf("%d",&n);
+	hanoi(n,1,3,2);
+	return 0;
+	
+ } 
+ 
+ void hanoi(int n,int from,int to,int buf)
+ {
+ 	if (n==0)
+ 	{
+ 		return;
+	 }
+	hanoi(n-1,from,buf,to);
+	printf("%d,%d==>%d\n",n,from,to);
+	hanoi(n-1,buf,to,from);
+ }
