@@ -41,19 +41,16 @@ for i in range(0,len(my_list)-(windowsize-1)):
 x_orin=list(range(0,len(my_list)))
 x_new=list(range(0,len(my_list)-(windowsize-1)))
 
-fig=plt.figure(num=1)
-plt.plot(x_orin,my_list,'s-',color='r')
-plt.title("original data")
-fig2=plt.figure(num=2)
+plt.plot(x_orin,my_list,marker="*",color='r',label="oringinal")
 plt.plot(x_new,median,'s-',color='g',label="median")    #方形標記
-plt.plot(x_new,mean,'o-',color='r',label="mean")        #圓形標記
+plt.plot(x_new,mean,'o-',color='b',label="mean")        #圓形標記
 plt.legend(
     loc='best',
-    fontsize=20,
+    fontsize=10,
     shadow=False,
     #facecolor='#ccc',
     #edgecolor='#000',
     #title_fontsize=20
     )
-plt.title("windowed data")
+plt.title("output data")
 plt.show()
