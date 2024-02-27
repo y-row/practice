@@ -4,6 +4,8 @@
  *     int val;
  *     struct ListNode *next;
  * };
+ * 
+ * space:7MB(97%)
  */
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
    struct ListNode* tmp1=l1;
